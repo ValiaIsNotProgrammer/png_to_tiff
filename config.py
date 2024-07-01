@@ -1,0 +1,1 @@
+PUBLIC_KEY = 'https://disk.yandex.ru/d/V47MEP5hZ3U1kg'

@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "ya-parser"
+version = "0.1.0"
+description = ""
+authors = ["valiaisnotprogrammer <ValiaChernykh@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pillow = "^10.4.0"
+loguru = "^0.7.2"
+aiohttp = "^3.9.5"
+aiofiles = "^24.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
