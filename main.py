@@ -1,4 +1,5 @@
 import asyncio
+import sys
 
 from loguru import logger
 
@@ -12,14 +13,23 @@ async def main(dirs: list[str]):
         to_tiff(dir_)
 
 
+def get_list_from_args(args: str) -> list[str]:
+    clear_args = sys.argv[1].replace("[", "").replace("]", "")
+    dirs = list(clear_args.split(','))
+    check_dirs(dirs)
+    return dirs
+
+
+def check_dirs(dirs: list[str]):
+    assert len(dirs) > 0
+    for dir_ in dirs:
+        assert dir_
+
+
 if __name__ == "__main__":
     logger.info("Скрипт запущен")
-    dirs = [
-        '1369_12_Наклейки 3-D_3',
-        '1388_12_Наклейки 3-D_3',
-        '1388_2_Наклейки 3-D_1',
-        '1388_6_Наклейки 3-D_2'
-            ]
+
+    dirs = get_list_from_args(sys.argv[1])
     asyncio.run(main(dirs))
 
 
